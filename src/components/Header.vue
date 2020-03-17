@@ -9,6 +9,11 @@
 </template>
 
 <style lang='scss' scoped>
+// I decided to go with scss, because
+// it compiles to include specificity
+// and allows nesting to make for
+// clean code that follows the nesting
+// of the html markup
 div.header {
   h1 {
     color: midnightblue;

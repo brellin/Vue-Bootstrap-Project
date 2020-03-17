@@ -5,6 +5,9 @@
 <script>
 export default {
   name: "Button",
+  // whereas I could have dynamically used the
+  // pathname like I did in the method, I wanted
+  // to experiment with prop drilling in Vue
   props: {
     content: {
       type: String
@@ -12,7 +15,11 @@ export default {
   },
   methods: {
     clickHandler: function(event) {
+      // preventing the default here to ensure
+      // that the page does not re-load
       event.preventDefault();
+      // I decided to grab the pathname directly
+      // from the window instead of using a prop
       console.log(window.location.pathname);
     }
   }
