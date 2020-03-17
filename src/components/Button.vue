@@ -1,5 +1,5 @@
 <template>
-  <button>{{ content }}</button>
+  <button v-on:click="clickHandler">{{ content }} Page Path</button>
 </template>
 
 <script>
@@ -8,6 +8,12 @@ export default {
   props: {
     content: {
       type: String
+    }
+  },
+  methods: {
+    clickHandler: function(event) {
+      event.preventDefault();
+      console.log(window.location.pathname);
     }
   }
 };
