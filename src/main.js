@@ -24,7 +24,7 @@ const router = new VueRouter({
       name: 'Home'
     },
     {
-      path: '/news',
+      path: '/home/news',
       component: News,
       name: 'News'
     }

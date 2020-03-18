@@ -2,10 +2,10 @@
   <!-- I could have done this without making it a component -->
   <header>
     <nav>
-      <router-link to="/home">Home</router-link>
-      <router-link to="/news">News</router-link>
+      <router-link to="/home" exact>Home</router-link>
+      <router-link to="/home/news">News</router-link>
     </nav>
-    <h1>Vue Routing - {{ this.pageName }}</h1>
+    <h1>Vue Routing - {{ pageName }}</h1>
   </header>
 </template>
 
@@ -13,8 +13,8 @@
 export default {
   name: "Header",
   computed: {
-    pageName: function() {
-      return this.$route.path.replace(/[/]/g, "");
+    pageName() {
+      return this.$route.name;
     }
   }
 };
@@ -32,7 +32,6 @@ header {
 
   h1 {
     color: midnightblue;
-    text-transform: capitalize;
   }
   nav {
     @include flex($justify: space-around);

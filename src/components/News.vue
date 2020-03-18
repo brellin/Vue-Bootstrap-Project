@@ -2,13 +2,11 @@
   <div class="news">
     <Button />
     <!-- Multi-functional button component (wouldn't normally do this) -->
-    <Button v-on:toggle="toggleOpen">{{ this.$data.open ? 'Hide' : 'Display' }} News</Button>
-    <div class="news-display" v-if="this.$data.open">
+    <Button v-on:toggle="toggleOpen">{{ isOpen ? 'Hide' : 'Display' }} News</Button>
+    <div class="news-display" v-if="isOpen">
       <h3>Some News</h3>
       <ul>
-        <li>News 1</li>
-        <li>News 2</li>
-        <li>News 3</li>
+        <li v-for="(val, index) in Array(3)" :key="index">News Article {{ index + 1 }}</li>
       </ul>
     </div>
   </div>
@@ -21,12 +19,12 @@ export default {
   components: { Button },
   methods: {
     toggleOpen() {
-      this.$data.open = !this.$data.open;
+      this.isOpen = !this.isOpen;
       return;
     }
   },
-  data: function() {
-    return { open: false };
+  data() {
+    return { isOpen: false };
   }
 };
 </script>
