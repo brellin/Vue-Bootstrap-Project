@@ -2,8 +2,8 @@
   <!-- I could have done this without making it a component -->
   <header>
     <nav>
-      <router-link to="/home" exact>Home</router-link>
-      <router-link to="/home/news">News</router-link>
+      <router-link to="/home">Home</router-link>
+      <router-link to="/news">News</router-link>
     </nav>
     <h1>Vue Routing - {{ pageName }}</h1>
   </header>

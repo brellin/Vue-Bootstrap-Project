@@ -1,6 +1,9 @@
 <template>
   <!-- Checking to see how dynamic clicks can be ($emit can become very handy) -->
-  <button v-on:click="e => this.$slots.default ? $emit('toggle') : log(e)">
+  <button
+    v-on:click="e => this.$slots.default ? $emit('toggle') : log(e)"
+    :class="open ? 'open': ''"
+  >
     <!-- Fiddling with slots -->
     <slot>Console Log Path</slot>
   </button>
@@ -23,6 +26,11 @@ export default {
       // a prop from the parent component
       console.log(this.$route.path);
     }
+  },
+  props: {
+    open: {
+      type: Boolean
+    }
   }
 };
 </script>
@@ -37,6 +45,10 @@ button {
   margin: 10px auto;
   background: #{$blay}55;
   transition: 0.3s ease-in-out;
+
+  &.open {
+    background: #{$blay}10;
+  }
 
   &:hover {
     box-shadow: 0 0 5px black;

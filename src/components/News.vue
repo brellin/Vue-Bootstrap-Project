@@ -2,7 +2,7 @@
   <div class="news">
     <Button />
     <!-- Multi-functional button component (wouldn't normally do this) -->
-    <Button v-on:toggle="toggleOpen">{{ isOpen ? 'Hide' : 'Display' }} News</Button>
+    <Button v-on:toggle="toggleOpen" :open="isOpen">{{ isOpen ? 'Hide' : 'Display' }} News</Button>
     <div class="news-display" v-if="isOpen">
       <h3>Some News</h3>
       <ul>
