@@ -2,7 +2,7 @@
   <!-- Checking to see how dynamic clicks can be ($emit can become very handy) -->
   <button v-on:click="e => this.$slots.default ? $emit('toggle') : log(e)">
     <!-- Fiddling with slots -->
-    <slot>Display Route Path</slot>
+    <slot>Console Log Path</slot>
   </button>
 </template>
 
