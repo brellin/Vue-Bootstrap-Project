@@ -14,13 +14,14 @@ export default {
     }
   },
   methods: {
-    clickHandler: function(event) {
+    clickHandler(event) {
       // preventing the default here to ensure
       // that the page does not re-load
       event.preventDefault();
       // I decided to grab the pathname directly
-      // from the window instead of using a prop
-      console.log(window.location.pathname);
+      // from router instead of
+      // using a prop from the parent
+      console.log(this.$route.path);
     }
   }
 };
