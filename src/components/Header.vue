@@ -22,23 +22,22 @@ export default {
 // clean code that follows the nesting
 // of the html markup
 header {
-  border-bottom: 1px solid #757575;
+  border-bottom: 1px solid $gray;
   border-radius: 25%;
 
   h1 {
     color: midnightblue;
   }
   nav {
-    display: flex;
-    justify-content: space-around;
+    @include flex($justify: space-around);
     width: 50%;
     margin: 0 auto;
-    background: #75757555;
+    background: #{$gray}55;
     padding: 5px 0;
     border-radius: 5px;
 
     a {
-      color: #757575;
+      color: $gray;
       background: whitesmoke;
       text-decoration: none;
       padding: 5px 10px;
@@ -47,7 +46,7 @@ header {
 
       &:hover,
       &.router-link-active {
-        background: #757575;
+        background: $gray;
         color: whitesmoke;
       }
     }

@@ -35,7 +35,7 @@ button {
   border-radius: 2.5px;
   outline: none;
   margin: 10px auto;
-  background: #75757555;
+  background: #{$blay}55;
   transition: 0.3s ease-in-out;
 
   &:hover {

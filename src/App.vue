@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss'>
 body {
   background: whitesmoke;
 }
@@ -25,6 +25,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $blay;
 }
 </style>

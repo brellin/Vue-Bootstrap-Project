@@ -39,14 +39,14 @@ div.news {
   align-items: center;
 
   div.news-display {
-    background: #75757555;
+    background: #{$gray}55;
     color: whitesmoke;
     width: 50%;
     min-height: 20vh;
     border-radius: 2.5px;
 
     h3 {
-      color: #2c3e4f;
+      color: $blay;
     }
 
     ul {
@@ -55,7 +55,7 @@ div.news {
 
       li {
         list-style-type: none;
-        color: #757575;
+        color: $gray;
       }
     }
   }
