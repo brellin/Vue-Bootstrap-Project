@@ -8,13 +8,27 @@ Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 
-const routes = [
-  { path: '/home', component: Home, props: true },
-  { path: '/news', component: News, props: true }
-];
-
 const router = new VueRouter({
-  routes,
+  // declaring the routes here
+  // for the small amount of routes
+  // there are makes more sense to me
+  routes: [
+    {
+      path: '/',
+      // redirects to /home from /
+      redirect: '/home'
+    },
+    {
+      path: '/home',
+      component: Home,
+      name: 'Home'
+    },
+    {
+      path: '/news',
+      component: News,
+      name: 'News'
+    }
+  ],
   mode: 'history'
 });
 

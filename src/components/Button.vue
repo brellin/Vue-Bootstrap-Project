@@ -1,26 +1,35 @@
 <template>
-  <button v-on:click="clickHandler">{{ content }} Page Path</button>
+  <!-- Checking to see how dynamic clicks can be ($emit can become very handy) -->
+  <button
+    v-on:click="e => this.$slots.default ? $emit('toggle') : log(e)"
+    :class="open ? 'open': ''"
+  >
+    <!-- Fiddling with slots -->
+    <slot>Console Log Path</slot>
+  </button>
 </template>
 
 <script>
 export default {
-  name: "Button",
-  // whereas I could have dynamically used the
-  // pathname like I did in the method, I wanted
-  // to experiment with prop drilling in Vue
-  props: {
-    content: {
-      type: String
-    }
-  },
+  // multiple functions in a button can be
+  // confusing and convoluted (like this one)
+  // the purpose of this is to figure out
+  // how dynamic Vue's components can become
+  name: "Multi-Functional-Button",
   methods: {
-    clickHandler: function(event) {
+    log(event) {
       // preventing the default here to ensure
       // that the page does not re-load
       event.preventDefault();
-      // I decided to grab the pathname directly
-      // from the window instead of using a prop
-      console.log(window.location.pathname);
+      // decided to grab the pathname directly
+      // from router instead of using
+      // a prop from the parent component
+      console.log(this.$route.path);
+    }
+  },
+  props: {
+    open: {
+      type: Boolean
     }
   }
 };
@@ -32,11 +41,17 @@ button {
   padding: 5px 10px;
   border: 1px solid midnightblue;
   border-radius: 2.5px;
-  cursor: pointer;
+  outline: none;
+  margin: 10px auto;
+  background: #{$blay}55;
   transition: 0.3s ease-in-out;
 
+  &.open {
+    background: #{$blay}10;
+  }
+
   &:hover {
-    background: #c3c3ff;
+    box-shadow: 0 0 5px black;
   }
 }
 </style>
