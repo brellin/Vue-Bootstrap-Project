@@ -1,25 +1,20 @@
 <template>
-  <button v-on:click="clickHandler">Display Route Path</button>
+  <!-- Checking to see how dynamic clicks can be ($emit can become very handy) -->
+  <button v-on:click="e => this.$slots.default ? $emit('toggle') : log(e)">
+    <!-- Fiddling with slots -->
+    <slot>Display Route Path</slot>
+  </button>
 </template>
 
 <script>
 export default {
-  name: "Button",
-
-  // commented out unnecessary props, but leaving them
-  // for tracking (normally wouldn't do this)
-
-  // whereas I could have dynamically used the
-  // pathname like I did in the method, I wanted
-  // to experiment with prop drilling in Vue
-  //   props: {
-  //     content: {
-  //       type: String
-  //     }
-  //   },
-
+  // multiple functions in a button can be
+  // confusing and convoluted (like this one)
+  // the purpose of this is to figure out
+  // how dynamic Vue's components can become
+  name: "Multi-Functional-Button",
   methods: {
-    clickHandler(event) {
+    log(event) {
       // preventing the default here to ensure
       // that the page does not re-load
       event.preventDefault();
@@ -39,6 +34,7 @@ button {
   border: 1px solid midnightblue;
   border-radius: 2.5px;
   outline: none;
+  margin: 10px auto;
   background: #75757555;
   transition: 0.3s ease-in-out;
 
