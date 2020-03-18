@@ -9,9 +9,24 @@ Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+  // declaring the routes here
+  // for the small amount of routes
+  // there are makes more sense to me
   routes: [
-    { path: '/home', component: Home },
-    { path: '/news', component: News }
+    {
+      path: '/',
+      beforeEnter: (to, from, next) => next('/home')
+    },
+    {
+      path: '/home',
+      component: Home,
+      name: 'Home'
+    },
+    {
+      path: '/news',
+      component: News,
+      name: 'News'
+    }
   ],
   mode: 'history'
 });

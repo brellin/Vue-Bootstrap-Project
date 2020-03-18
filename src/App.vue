@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
@@ -20,7 +20,6 @@ export default {
 body {
   background: whitesmoke;
 }
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

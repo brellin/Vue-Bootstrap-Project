@@ -8,6 +8,7 @@
 <script>
 import Button from "./Button";
 export default {
+  name: "News",
   components: { Button }
 };
 </script>

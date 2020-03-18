@@ -33,11 +33,12 @@ button {
   padding: 5px 10px;
   border: 1px solid midnightblue;
   border-radius: 2.5px;
-  cursor: pointer;
+  outline: none;
+  background: #75757555;
   transition: 0.3s ease-in-out;
 
   &:hover {
-    background: #c3c3ff;
+    box-shadow: 0 0 5px black;
   }
 }
 </style>
