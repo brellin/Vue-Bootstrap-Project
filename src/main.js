@@ -15,6 +15,7 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      // redirects to /home from / before the page loads
       beforeEnter: (to, from, next) => next('/home')
     },
     {
