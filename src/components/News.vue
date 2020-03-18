@@ -1,9 +1,8 @@
 <template>
   <div class="news">
-    <h2>News</h2>
     <Button />
     <!-- Multi-functional button component (wouldn't normally do this) -->
-    <Button v-on:toggle="toggleOpen">{{this.$data.open ? 'Hide' : 'Display'}} News</Button>
+    <Button v-on:toggle="toggleOpen">{{ this.$data.open ? 'Hide' : 'Display' }} News</Button>
     <div class="news-display" v-if="this.$data.open">
       <h3>Some News</h3>
       <ul>
@@ -34,9 +33,7 @@ export default {
 
 <style lang="scss">
 div.news {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(column, $align: center);
 
   div.news-display {
     background: #{$gray}55;

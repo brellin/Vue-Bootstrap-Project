@@ -5,13 +5,18 @@
       <router-link to="/home">Home</router-link>
       <router-link to="/news">News</router-link>
     </nav>
-    <h1>Vue Routing</h1>
+    <h1>Vue Routing - {{ this.pageName }}</h1>
   </header>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  computed: {
+    pageName: function() {
+      return this.$route.path.replace(/[/]/g, "");
+    }
+  }
 };
 </script>
 
@@ -27,10 +32,11 @@ header {
 
   h1 {
     color: midnightblue;
+    text-transform: capitalize;
   }
   nav {
     @include flex($justify: space-around);
-    width: 50%;
+    width: 25%;
     margin: 0 auto;
     background: #{$gray}55;
     padding: 5px 0;
